@@ -1,7 +1,7 @@
 library flutter_common_library;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export './extensions/date_extension.dart';
+export './extensions/enum_extension.dart';
+export './extensions/string_extension.dart';
+export './utilities/dynamic_utilities.dart';
+export './utilities/print_utilities.dart';
