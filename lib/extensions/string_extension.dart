@@ -33,4 +33,55 @@ extension StringExtension on String {
 
     return null;
   }
+
+  // Cases Format
+  String formatOriginalSnakeCase() {
+    return trim().replaceAll(" ", "_");
+  }
+
+  String formatSnakeCase() {
+    // snake case var is snake_case_var
+    return toLowerCase().trim().replaceAll(" ", "_");
+  }
+
+  String formatUpperSnakeCase() {
+    return toUpperCase().trim().replaceAll(" ", "_");
+  }
+
+  String formatKebabCase() {
+    // kebab case var is kebab-case-var
+    return toLowerCase().trim().replaceAll(" ", "-");
+  }
+
+  String formatCamelCase() {
+    // camel case var is camelCaseVar
+    String value = "";
+    trim().split(" ").asMap().forEach((index, valueStr) {
+      if (index > 0) {
+        var firstCharacter = valueStr[0];
+        value += valueStr.replaceFirst(
+          firstCharacter,
+          firstCharacter.toUpperCase(),
+        );
+      } else {
+        value += valueStr;
+      }
+    });
+
+    return value;
+  }
+
+  String formatPascalCase() {
+    // pascal case var is PascalCaseVar
+    String value = "";
+    trim().split(" ").asMap().forEach((index, valueStr) {
+      var firstCharacter = valueStr[0];
+      value += valueStr.replaceFirst(
+        firstCharacter,
+        firstCharacter.toUpperCase(),
+      );
+    });
+
+    return value;
+  }
 }
