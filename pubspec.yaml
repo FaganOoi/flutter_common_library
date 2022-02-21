@@ -1,7 +1,7 @@
 name: flutter_common_library
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+description: Extensions/Utilities that will frequently used
+version: 0.0.2
+homepage: https://github.com/FaganOoi/flutter_common_library
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
