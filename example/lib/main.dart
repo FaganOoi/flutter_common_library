@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_common_library/widgets/button_gallery.dart';
+import 'package:flutter_common_library/flutter_common_library.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,6 +50,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  DateTime _dateTime = DateTime.now();
 
   void _incrementCounter() {
     setState(() {
@@ -58,7 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      // _counter++;
+      _counter = DateTime.now().toUtc().millisecondsSinceEpoch;
+      _dateTime = _counter.toDateTimeFromMilli()!;
     });
   }
 
@@ -95,6 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 onClick: _incrementCounter,
                 radius: 10,
               ),
+              Text("_dateTime utc: " + DateTime.now().toUtc().toString()),
+              Text("_dateTime: " + _dateTime.toString()),
             ],
           ),
         ),
